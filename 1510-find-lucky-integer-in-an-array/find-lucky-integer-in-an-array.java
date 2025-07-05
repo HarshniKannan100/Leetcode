@@ -1,6 +1,6 @@
 class Solution {
     public int findLucky(int[] arr) {
-        int[] freq=new int[500+1];
+        int[] freq=new int[501];
         for(int ind=0;ind<arr.length;ind++){
             freq[arr[ind]]++;
         }
