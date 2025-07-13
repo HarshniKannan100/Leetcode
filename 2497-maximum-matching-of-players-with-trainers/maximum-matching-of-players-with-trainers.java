@@ -8,8 +8,10 @@ class Solution {
             t++;
         }
             if(t==trainers.length) return count;
-            count++;
-            t++;
+            else{
+                count++;
+                t++;
+            }
         }
         return count;
     }
