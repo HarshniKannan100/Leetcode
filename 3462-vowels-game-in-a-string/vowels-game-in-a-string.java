@@ -7,7 +7,6 @@ class Solution {
             }
         }
         if(vcount==0) return false;
-        else if(vcount%2!=0) return true;
         else return true;
     }
 }
