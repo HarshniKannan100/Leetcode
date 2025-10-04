@@ -13,7 +13,6 @@ class Solution {
             }else{
                 r--;
             }
-            slots++;
 
 
 
