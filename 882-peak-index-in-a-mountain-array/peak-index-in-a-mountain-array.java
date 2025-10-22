@@ -9,6 +9,6 @@ class Solution {
                 r--;
             }else l++;
         }
-        return l;
+        return 0;
     }
 }
