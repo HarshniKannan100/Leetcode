@@ -10,22 +10,22 @@
  */
 class Solution {
     public ListNode modifiedList(int[] nums, ListNode head) {
-        Set<Integer> list=new HashSet<>();
+        int[] freq=new int[100001];
         for(int i=0;i<nums.length;i++){
-            list.add(nums[i]);
+            freq[nums[i]]++;
         }
         
-        while(list.contains(head.val) && head.next!=null){
+        while(freq[head.val]!=0 && head.next!=null){
             head=head.next;
         }
         ListNode ans=head;
         while(head.next!=null && head.next.next!=null){
-            if(list.contains(head.next.val)){
+            if(freq[head.next.val]!=0){
                 head.next=head.next.next;
             }
             else head=head.next;
         }
-        if(head.next!=null && list.contains(head.next.val)) head.next=null;
+        if(head.next!=null && freq[head.next.val]!=0) head.next=null;
         return ans;
     }
 }
