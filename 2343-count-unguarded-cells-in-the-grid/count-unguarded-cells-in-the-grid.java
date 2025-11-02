@@ -19,7 +19,6 @@ class Solution {
     }   
     int[][] vis=new int[m][n];
     for(int c=0;c<guards.length;c++){
-        mat[guards[c][0]][guards[c][1]]=-2;
         int[][] diff={{0,1},{1,0},{-1,0},{0,-1}};
         for(int v=0;v<4;v++){
             int i=guards[c][0]+diff[v][0],j=guards[c][1]+diff[v][1];
