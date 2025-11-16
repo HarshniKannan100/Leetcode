@@ -1,17 +1,12 @@
 class Solution {
-    static final int M = 1_000_000_007;
-    
     public int numSub(String s) {
-        long ans = 0;
-        long count1 = 0;
-
-        for (char ch : s.toCharArray()) {
-            if (ch == '1') {
-                count1++;
-                ans = (ans + count1) % M; // add current streak
-            } else count1 = 0;
+        long count=0,tot=0;
+        for(char ch:s.toCharArray()){
+            if(ch=='1'){
+                count++;
+                tot=(tot+count)%1000000007;
+            }else count=0;
         }
-
-        return (int) ans;
+        return (int) tot;
     }
 }
