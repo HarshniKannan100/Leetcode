@@ -14,14 +14,22 @@ class Solution {
         for(int i=0;i<100;i++){
             double mid=low+(high-low)/2.0;
             double currentArea=0;
+            double area=0;
             for(int[] s:squares){
                 double y=s[1];
                 double l=s[2];
-                double heightBelow=Math.max(0,Math.min(l,mid-y));
-                currentArea+=heightBelow*l;
+                double top=y+l;
+                if(y>=mid){
+                    continue;
+                }else if(top<=mid){
+                    area+=l*l;
+                }else{
+                    area+=l*(mid-y);
+                }
             }
-            if(currentArea<targetArea) low=mid;
-            else high=mid;
+            if(area>=targetArea){
+                high=mid;
+            }else low=mid;
         }
         return high;
     }
