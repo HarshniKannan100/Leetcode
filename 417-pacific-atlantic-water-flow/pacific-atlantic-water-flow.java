@@ -1,6 +1,6 @@
 class Solution {
-    private int m, n;
-    private int[][] directions = {{1,0}, {-1,0}, {0,1}, {0,-1}};
+    int m, n;
+    int[][] directions = {{1,0}, {-1,0}, {0,1}, {0,-1}};
 
     public List<List<Integer>> pacificAtlantic(int[][] heights) {
         m = heights.length;
