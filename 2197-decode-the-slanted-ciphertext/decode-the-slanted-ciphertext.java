@@ -11,8 +11,7 @@ class Solution {
             }
         }
         int r=sb.length()-1;
-        while(r>=0 && !Character.isLetter(sb.charAt(r))) r--;
-        if(r==-1) return "";
+        while(r>=0 && sb.charAt(r)==' ') r--;
         return sb.substring(0,r+1).toString();
     }
 }
