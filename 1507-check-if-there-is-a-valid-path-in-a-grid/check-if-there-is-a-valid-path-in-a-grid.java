@@ -6,8 +6,8 @@ class Solution {
         int[][] streetDirs = {{},{0, 1},{2, 3},{0, 3},{1, 3},{0, 2},{1, 2}};
         int[] opposite = {1, 0, 3, 2};
         boolean[][] visited = new boolean[m][n];
-        java.util.ArrayDeque<int[]> q = new java.util.ArrayDeque<>();
-        q.offer(new int[]{0, 0});
+        Queue<int[]> q = new LinkedList<>();
+        q.add(new int[]{0, 0});
         visited[0][0] = true;
         while (!q.isEmpty()) {
             int[] cur = q.poll();
