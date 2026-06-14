@@ -23,13 +23,11 @@ class Solution {
             arr[i]=temp.val;
             temp=temp.next;
         }
+        int max=0;
         for(int i=n/2;i<n;i++){
             arr[n-1-i]+=temp.val;
+            max=Math.max(max,arr[n-1-i]);
             temp=temp.next;
-        }
-        int max=0;
-        for(int v:arr){
-            max=Math.max(max,v);
         }
         return max;
     }
