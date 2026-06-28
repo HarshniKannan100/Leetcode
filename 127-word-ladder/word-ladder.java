@@ -9,11 +9,11 @@ class Node{
 class Solution {
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         Queue<Node> q=new LinkedList<>();
-        int min=Integer.MAX_VALUE;
         q.add(new Node(beginWord,1));
         Set<String> seen=new HashSet<>();
         Set<String> wordSet=new HashSet<>();
         for(String s:wordList) wordSet.add(s);
+        if(!wordSet.contains(endWord)) return 0;
         while(!q.isEmpty()){
             Node nn=q.poll();
             String s=nn.str;
@@ -30,7 +30,7 @@ class Solution {
                     }
                     if(wordSet.contains(toS) && !seen.contains(toS)){
                         if(endWord.equals(toS)){
-                            min=Math.min(min,nn.f+1);
+                            return nn.f+1;
                         }else{
                             q.add(new Node(toS,nn.f+1));
                         }
@@ -39,6 +39,6 @@ class Solution {
                 }
             }
         }
-        return min==Integer.MAX_VALUE?0:min;
+        return 0;
     }
 }
